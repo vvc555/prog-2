@@ -1,0 +1,33 @@
+<% include head.ejs %>
+<% include header.ejs %>
+
+<body>
+    <a class="btn btn-add btn-lg px-3 btn-block" role="button" href="add">+ Lisa projekt / sündmus</a>
+
+    <div class="btn-group-vertical btn-block" role="group" aria-label="Projektid / sündmused">
+        <% postid.forEach((post, index) => { %>
+        <div class="pro-group" data-toggle="modal" href="#<%=post.id%>">
+            <h5 class="text-info"><%= post.tahtaeg %> - <%= post.tyyp %></h5>
+            <div class="gradient">
+                <p class="m-1"><%= post.aine %>,
+                    <br/>Õppejõu Nimi</p>
+                <p class="m-1 font-weight-bold"><%= post.kirjeldus %></p>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+
+
+    <% include bottom.ejs %>
+
+    <% include menu.ejs %>
+    <% include search.ejs %>
+
+    <% postid.forEach((post, index) => { %>
+        <% include post-modal.ejs %>
+    <% }) %>
+
+
+</body>
+
+</html>

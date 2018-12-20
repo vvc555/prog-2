@@ -1,0 +1,264 @@
+<% include head.ejs %>
+<% include header.ejs %>
+
+<body>
+    <a class="btn btn-add btn-lg px-3 btn-block" role="button" href="add">+ Lisa projekt / sündmus</a>
+
+    <div class="btn-group-vertical btn-block" role="group" aria-label="Projektid / sündmused">
+        <div class="pro-group" data-toggle="modal" href="#1">
+            <h5 class="text-info">L, 8. detsember 2018 - projekt</h5>
+            <div class="gradient">
+                <p class="m-1">Kl 10–17:30 Kasutajaliidese disain,
+                    <br/> Vanessa Vorteil</p>
+                <p class="m-1 font-weight-bold">Prototüüp!!! ...</p>
+            </div>
+        </div>
+        <div class="pro-group" data-toggle="modal" href="#2">
+
+            <h5 class="text-info">N, 13. detsember 2018 - sündmus</h5>
+            <div class="gradient">
+                <p class="m-1">Kl 19 sündmus</p>
+                <p class="m-1 font-weight-bold">HK jõulupidu</p>
+            </div>
+        </div>
+        <div class="pro-group" data-toggle="modal" href="#3">
+            <h5 class="text-info">N, 20. detsember 2018 - eksam</h5>
+            <div class="gradient">
+                <p class="m-1">Kl 10–17:30 Arvutivõrgud ja andmeside,
+                    <br/>Indrek Viiret</p>
+                <p class="m-1 font-weight-bold">Eksam</p>
+            </div>
+        </div>
+        <div class="pro-group" data-toggle="modal" href="#4">
+            <h5 class="text-info">R, 21. detsember 2018 - kodutöö</h5>
+            <div class="gradient">
+                <p class="m-1">Kl 14:15–17:30 Erialane inglise keel,
+                    <br/> Mari Kuli</p>
+                <p class="m-1 font-weight-bold">Essee</p>
+            </div>
+        </div>
+        <div class="pro-group" data-toggle="modal" href="#5">
+            <h5 class="text-info">K, 9. jaanuar 2019 - arvestus</h5>
+            <div class="gradient">
+                <p class="m-1">Kl 10–17:30 ELU - Erialasid Lõimiv Uuendus,
+                    <br/> Laura Hein, Ene Hiiepuu, Hele...</p>
+                <p class="m-1 font-weight-bold">ELU projekti kaitsmine</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row ml-0 mr-0 fixed-bottom">
+        <div class="col p-0">
+            <a class="btn btn-block btn-info" href="index.html" role="button">üldvaade</a>
+        </div>
+        <div class="col p-0">
+            <a class="btn btn-block btn-outline-info" href="calendar.html" role="button">kalender</a>
+        </div>
+    </div>
+    </div>
+
+
+    <% include menu.ejs %>
+    <% include search.ejs %>
+
+
+    <div id="1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Prototüüp - Kasutajaliides...</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="p-0">
+                        <b>Tähtaeg:</b> L, 8. detsember 2018</p>
+                    <p class="p-0">
+                        <b>Prioriteet:</b>
+                        <span class="text-danger">Kõrge</span>
+                    </p>
+                    <p class="p-0">
+                        <b>Meeldetuletus:</b> Sees</p>
+                    <p class="p-0">
+                        <b>Aine:</b> Kasutajaliidese disain (HKI5088.HK)</p>
+                    <p class="p-0">
+                        <b>Õppejõud:</b> Vanessa Vorteil</p>
+                    <p class="p-0">
+                        <b>Kirjeldus:</b> Prototüüp - valmis teha HTML/CSS baasil. Lisada veebi Tallinnas saadud tagasiside
+                        Figma prototüübile. Viimane touch-up.</p>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-outline-danger" href="deleted.html" role="button">Kustuta
+                        <span class="fas fa-trash-alt"></span>
+                    </a>
+                    <a class="btn btn-outline-warning" href="#" role="button">Muuda
+                        <span class="fas fa-pen"></span>
+                    </a>
+                    <a class="btn btn-success" href="checked.html" role="button">Tehtud
+                        <span class="fas fa-check"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Jõulupidu - sündmus</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="p-0">
+                        <b>Tähtaeg:</b> N, 13. detsember 2018</p>
+                    <p class="p-0">
+                        <b>Prioriteet:</b>
+                        <span class="text-second">Madal</span>
+                    </p>
+                    <p class="p-0">
+                        <b>Meeldetuletus:</b> Väljas</p>
+                    <p class="p-0">
+                        <b>Kirjeldus:</b> Jõulupidu HK hoones, maksi teemaline.</p>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-outline-danger" href="deleted.html" role="button">Kustuta
+                        <span class="fas fa-trash-alt"></span>
+                    </a>
+                    <a class="btn btn-warning" href="#" role="button">Muuda
+                        <span class="fas fa-pen"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Eksam - Arvutivõrgud ja andmeside</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="p-0">
+                        <b>Tähtaeg:</b> N, 20. detsember 2018</p>
+                    <p class="p-0">
+                        <b>Prioriteet:</b>
+                        <span class="text-danger">Kõrge</span>
+                    </p>
+                    <p class="p-0">
+                        <b>Meeldetuletus:</b> Sees</p>
+                    <p class="p-0">
+                        <b>Aine:</b> Arvutivõrgud ja andmeside (HKI5070.HK)</p>
+                    <p class="p-0">
+                        <b>Õppejõud:</b> Indrek Viiret</p>
+                    <p class="p-0">
+                        <b>Kirjeldus:</b> Eksam, tase 2 lõpueksam ning praktiline osa.</p>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-outline-danger" href="deleted.html" role="button">Kustuta
+                        <span class="fas fa-trash-alt"></span>
+                    </a>
+                    <a class="btn btn-outline-warning" href="#" role="button">Muuda
+                        <span class="fas fa-pen"></span>
+                    </a>
+                    <a class="btn btn-success" href="checked.html" role="button">Tehtud
+                        <span class="fas fa-check"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="4" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Essee - Erialane inglise keel</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="p-0">
+                        <b>Tähtaeg:</b> R, 21. detsember 2018</p>
+                    <p class="p-0">
+                        <b>Prioriteet:</b>
+                        <span class="text-warning">Keskmine</span>
+                    </p>
+                    <p class="p-0">
+                        <b>Meeldetuletus:</b> Sees</p>
+                    <p class="p-0">
+                        <b>Aine:</b> Erialane inglise keel (HKI5082.HK)</p>
+                    <p class="p-0">
+                        <b>Õppejõud:</b> Mari Kuli</p>
+                    <p class="p-0">
+                        <b>Kirjeldus:</b> Essee enda valitud teemal ning 7 läbi töödeldud artikli põhjal.</p>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-outline-danger" href="deleted.html" role="button">Kustuta
+                        <span class="fas fa-trash-alt"></span>
+                    </a>
+                    <a class="btn btn-outline-warning" href="edit.html" role="button">Muuda
+                        <span class="fas fa-pen"></span>
+                    </a>
+                    <a class="btn btn-success" href="checked.html" role="button">Tehtud
+                        <span class="fas fa-check"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="5" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">ELU projekti kaitsmine - ELU - Erialasid Lõimiv Uuendus</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="p-0">
+                        <b>Tähtaeg:</b> K, 9. jaanuar 2019</p>
+                    <p class="p-0">
+                        <b>Prioriteet:</b>
+                        <span class="text-warning">Keskmine</span>
+                    </p>
+                    <p class="p-0">
+                        <b>Meeldetuletus:</b> Sees</p>
+                    <p class="p-0">
+                        <b>Aine:</b> ELU - Erialasid Lõimiv Uuendus (YID6001.YM) </p>
+                    <p class="p-0 d-inline-block text-truncate" style="max-width: 310px;">
+                        <b>Õppejõud:</b> Laura Hein, Ene Hiiepuu, Hele Leek-Ambur, Gina Metssalu, Margus Nigol, Arvo Pärenson,
+                        Liina Viiret</p>
+                    <p class="p-0">
+                        <b>Kirjeldus:</b> Skeem - peab olema valmis. Aruanded esitatud ning power-point esitlemiseks.</p>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-outline-danger" href="deleted.html" role="button">Kustuta
+                        <span class="fas fa-trash-alt"></span>
+                    </a>
+                    <a class="btn btn-outline-warning" href="#" role="button">Muuda
+                        <span class="fas fa-pen"></span>
+                    </a>
+                    <a class="btn btn-success" href="checked.html" role="button">Tehtud
+                        <span class="fas fa-check"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

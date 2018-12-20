@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+        <div id="<%= post.slug %>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title"><%= post.pealkiri %></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="p-0">
+                                <b>Tähtaeg: </b><%= post.tahtaeg %></p>
+                            <p class="p-0">
+                                <b>Prioriteet: </b>
+                                <% if (post.prioriteet ==1) { %> <span class="text-success"> 1-Madal <% } 
+                                    else if (post.prioriteet ==2) { %><span class="text-success"> 2-Natuke Madal <% } 
+                                    else if (post.prioriteet ==3) { %><span class="text-warning">< 3-Keskimine <% } 
+                                    else if (post.prioriteet ==4) { %><span class="text-danger">< 4-Natuke Keskmine <% } 
+                                    else { %><span class="text-danger"> 5-Kõrge <% } %></span>
+                            </p>
+                            <p class="p-0">
+                                <b>Meeldetuletus: </b><% if (post.meeldetuletus ==true) { %> Sees <% } else {%>Väljas<% } %></p>
+                            <p class="p-0">
+                                <b>Aine: </b><%= post.aine %></p>
+                            <p class="p-0">
+                                <b>Õppejõud: </b>Õppejõu Nimi</p>
+                            <p class="p-0">
+                                <b>Kirjeldus: </b><%= post.kirjeldus %></p>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-outline-danger" href="/delete" role="button">Kustuta
+                                <span class="fas fa-trash-alt"></span>
+                            </a>
+                            <a class="btn btn-outline-warning" href="#" role="button">Muuda
+                                <span class="fas fa-pen"></span>
+                            </a>
+                            <a class="btn btn-success" href="/checked" role="button">Tehtud
+                                <span class="fas fa-check"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

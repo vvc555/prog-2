@@ -1,0 +1,46 @@
+<div id="<%=post.id%>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><%= post.pealkiri %></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="p-0">
+                    <b>Tähtaeg: </b><%= post.tahtaeg %></p>
+                <p class="p-0">
+                    <b>Prioriteet: </b>
+                    <% if (post.prioriteet ==1) { %> <span class="text-success"> 1-Madal <% } 
+                        else if (post.prioriteet ==2) { %><span class="text-success"> 2-Natuke Madal <% } 
+                        else if (post.prioriteet ==3) { %><span class="text-warning">< 3-Keskimine <% } 
+                        else if (post.prioriteet ==4) { %><span class="text-danger">< 4-Natuke Keskmine <% } 
+                        else { %><span class="text-danger"> 5-Kõrge <% } %></span>
+                </p>
+                <p class="p-0">
+                    <b>Meeldetuletus: </b><% if (post.meeldetuletus ==true) { %> Sees <% } else {%>Väljas<% } %></p>
+                <p class="p-0">
+                    <b>Aine: </b><%= post.aine %></p>
+                <p class="p-0">
+                    <b>Õppejõud: </b>Õppejõu Nimi</p>
+                <p class="p-0">
+                    <b>Kirjeldus: </b><%= post.kirjeldus %></p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-outline-danger delete-post" href="#" data-id="<%= post._id %>" role="button">Kustuta
+                    <span class="fas fa-trash-alt"></span>
+                </a>
+                <a class="btn btn-outline-warning" href="/edit/<%= post._id %>" role="button">Muuda
+                    <span class="fas fa-pen"></span>
+                </a>
+                <% if (post.tehtud ==false) { %>
+                    <a class="btn btn-success check-post" href="#" data-id="<%= post._id %>" role="button">Tehtud<% }
+                        else { %>
+                            <a class="btn btn-success check-post" href="#" data-id="<%= post._id %>" role="button">Tegemata<% } %>
+                    <span class="fas fa-check"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

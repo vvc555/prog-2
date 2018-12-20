@@ -1,0 +1,104 @@
+<% include head.ejs %>
+<% include header.ejs %>
+
+<body>
+    <h4 class="mx-auto">Projekti / sündmuse muutmine</h4>
+    <form class="px-3 pt-2 pb-5" action="/edited/<%= post._id %>" method="POST" >
+        <div class="form-group">
+            <label for="aine">Aine: <font style="color: red;">*</font></label>
+            <select class="form-control" id="aine" name="aine">
+                <option selected><%= post.aine %></option>
+                <option>Muu</option>
+                <option>Kasutajaliidese disain (HKI5088.HK)</option>
+                <option>Arvutivõrgud ja andmeside (HKI5070.HK)</option>
+                <option>Erialane inglise keel (HKI5082.HK)</option>
+                <option>ELU - Erialasid Lõimiv Uuendus (YID6001.YM)</option>
+                <option>Puudub</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="tyyp">Tüüp: <font style="color: red;">*</font></label>
+            <select class="form-control" id="tyyp" name="tyyp" required>
+                <option selected><%= post.tyyp %></option>
+                <option>Projekt</option>
+                <option>Kodutöö</option>
+                <option>Arvestus</option>
+                <option>Eksam</option>
+                <option>Muu sündmus</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="pealkiri">Pealkiri:</label>
+            <input type="text" class="form-control" id="pealkiri" name="pealkiri" value="<%= post.pealkiri %>">
+        </div>
+        <div class="form-group">
+            <label for="kirjeldus">Kirjeldus</label>
+            <textarea class="form-control" id="kirjeldus" name="kirjeldus" rows="3"><%= post.kirjeldus %></textarea>
+        </div>
+        <div class="form-group">
+            <label for="tahtaeg">Tähtaeg: <font style="color: red;">*</font></label>
+            <input type="date" class="form-control" id="tahtaeg" name="tahtaeg" value="<%= post.tahtaeg.toISOString().split('T')[0] %>" required>
+        </div>
+        <div id="radio-group">
+            <label for="radio-group">Vali prioriteet:  <font style="color: red;">*</font>
+                <br/>1- madal, 3 -keskmine, 5 - väga kõrge</label>
+            <br>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" name="prioriteet" id="prioriteet" value="1" <% if (post.prioriteet ==1) { %> checked <% } %> >
+                <label class="form-check-label" for="prioriteet">
+                    1
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" name="prioriteet" id="prioriteet" value="2" <% if (post.prioriteet ==2) { %> checked <% }%> >
+                <label class="form-check-label" for="prioriteet">
+                    2
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" name="prioriteet" id="prioriteet" value="3" <% if (post.prioriteet ==3) { %> checked <% }%> >
+                <label class="form-check-label" for="prioriteet">
+                    3
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" name="prioriteet" id="prioriteet" value="4" <% if (post.prioriteet ==4) { %> checked <% }%> >
+                <label class="form-check-label" for="prioriteet">
+                    4
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" name="prioriteet" id="prioriteet" value="5" <% if (post.prioriteet ==5) { %> checked <% }%> >
+                <label class="form-check-label" for="prioriteet">
+                    5
+                </label>
+            </div>
+        </div>
+        <label class="pt-3 pb-3" for="meeldetuletus">Meeldetuletus:</label>
+        <input id="meeldetuletus" name="meeldetuletus" type="checkbox" data-toggle="toggle" data-onstyle="info" data-offstyle="default" <% if (post.meeldetuletus ==true) { %> checked <% } %> value="true" >
+    
+
+        <div class="row ml-0 mr-0 fixed-bottom">
+            <div class="col p-1">
+                <a class="btn btn-block btn-danger" href="/" role="button">
+                    <span class="fas fa-times"></span>
+                </a>
+                <!-- <button type="button" class="btn btn-block btn-outline-info">kalender</button> -->
+            </div>
+            <div class="col-8 p-1">
+                <button type="submit" class="btn btn-block btn-success">
+                    <span class="fas fa-check"></span>
+                </button>
+                <!-- <button type="button" class="btn btn-block btn-info">üldvaade</button> -->
+            </div>
+        </div>
+    </form>
+
+    <!-- ####################################################################### -->
+
+    <% include menu.ejs %>
+    <% include search.ejs %>
+
+</body>
+
+</html>

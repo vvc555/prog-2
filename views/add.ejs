@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
+        crossorigin="anonymous"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+</head>
+
+<header class="sticky-top">
+    <div class="page-wrapper">
+        <div class="d-flex justify-content-between bg-info">
+
+            <a class="btn btn-lg btn-info" data-toggle="modal" href="#menu" role="button">
+                <img src="img/hamburger_icon.png" height="30" alt="Menüü">
+            </a>
+            <a class="btn btn-lg btn-info" role="button" href="index.html"> Ajaplaneerija </a>
+            <a class="btn btn-lg btn-info btn-icon" role="button" data-toggle="modal" href="#search" title="Search">
+                <img src="img/search_icon.png" height="30" alt="Otsi">
+            </a>
+        </div>
+</header>
+
+<body>
+    <h4 class="mx-auto">Projekti / sündmuse lisamine</h4>
+    <form class="px-3 pt-2 pb-3" action="/inserted" method="POST">
+        <div class="form-group">
+            <label for="aine-l"><b>Aine:</b>
+                <font style="color: red;">*</font>
+            </label>
+            <select class="form-control" id="aine" name="aine">
+                <option selected>Vali aine...</option>
+                <option>Kasutajaliidese disain (HKI5088.HK)</option>
+                <option>Arvutivõrgud ja andmeside (HKI5070.HK)</option>
+                <option>Erialane inglise keel (HKI5082.HK)</option>
+                <option>ELU - Erialasid Lõimiv Uuendus (YID6001.YM)</option>
+                <option>Puudub</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="tyyp"><b>Tüüp:</b>
+                <font style="color: red;">*</font>
+            </label>
+            <select class="form-control" id="tyyp" name="tyyp" required placeholder="vali tüüp">
+                <option selected>Vali tüüp...</option>
+                <option>Projekt</option>
+                <option>Kodutöö</option>
+                <option>Arvestus</option>
+                <option>Eksam</option>
+                <option>Muu sündmus</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="pealkiri"><b>Pealkiri:</b></label>
+            <input type="text" class="form-control" id="pealkiri" name="pealkiri" placeholder="Sisesta pealkiri...">
+        </div>
+        <div class="form-group">
+            <label for="kirjeldus"><b>Kirjeldus</b></label>
+            <textarea class="form-control" id="kirjeldus" name="kirjeldus" rows="3" placeholder="Sisesta kirjeldus..."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="tahtaeg"><b>Tähtaeg:</b>
+                <font style="color: red;">*</font>
+            </label>
+            <input type="date" class="form-control" id="tahtaeg" name="tahtaeg" required>
+        </div>
+        <div id="radio-group">
+            <label for="prioriteet-l"><b>Vali prioriteet:</b>
+                <font style="color: red;">*</font>
+                <br/>1- madal, 3 -keskmine, 5 - väga kõrge</label>
+            <br>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" name="prioriteet" id="prioriteet1" value="1">
+                <label class="form-check-label" for="prioriteet-l">
+                    1
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" name="prioriteet" id="prioriteet2" value="2">
+                <label class="form-check-label" for="prioriteet-l">
+                    2
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" name="prioriteet" id="prioriteet3" value="3">
+                <label class="form-check-label" for="prioriteet-l">
+                    3
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" name="prioriteet" id="prioriteet4" value="4">
+                <label class="form-check-label" for="prioriteet-l">
+                    4
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" name="prioriteet" id="prioriteet5" value="5">
+                <label class="form-check-label" for="prioriteet-l">
+                    5
+                </label>
+            </div>
+        </div>
+        <label class="pt-3" for="meeldetuletus-l"><b>Meeldetuletus:</b></label>
+        <input id="meeldetuletus" name="meeldetuletus"  type="checkbox" data-toggle="toggle" data-onstyle="info" data-offstyle="secondary" checked value="true">
+
+
+        <div class="row ml-0 mr-0">
+            <div class="col p-1">
+                <a class="btn btn-block btn-danger" href="/" role="button">
+                    <span class="fas fa-times"></span>
+                </a>
+                <!-- <button type="button" class="btn btn-block btn-outline-info">kalender</button> -->
+            </div>
+            <div class="col-8 p-1">
+                
+                <button type="submit" class="btn btn-block btn-success">
+                    <span class="fas fa-check"></span>
+                </button>
+                <!-- <button type="button" class="btn btn-block btn-info">üldvaade</button> -->
+            </div>
+        </div>
+    </form>
+
+    <!-- ####################################################################### -->
+    
+    <% include menu.ejs %>
+    <% include search.ejs %>
+
+
+</body>
+
+</html>

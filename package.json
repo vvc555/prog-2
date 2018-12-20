@@ -1,0 +1,27 @@
+{
+  "name": "planeerija",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "eslint": "^5.10.0",
+    "express": "^4.16.4",
+    "jquery": "^3.3.1",
+    "mongoose": "^5.4.0",
+    "morgan": "^1.9.1",
+    "npm": "^6.5.0",
+    "slugify": "^1.3.4",
+    "socket.io": "^2.2.0",
+    "to": "^0.2.9",
+    "update": "^0.7.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

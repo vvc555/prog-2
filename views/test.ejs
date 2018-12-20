@@ -1,0 +1,47 @@
+<% include head.ejs %>
+<% include header.ejs %>
+
+<body>
+    <h4 class="mx-auto">Projekti / sündmuse lisamine</h4>
+    <form class="px-3 pt-2 pb-3" action="/inserted" method="POST">
+        <div class="form-group">
+            <label for="aine"><b>Aine:</b>
+                <font style="color: red;">*</font>
+            </label>
+            <select class="form-control" id="aine" name="aine">
+                <option selected>Vali aine...</option>
+                <option>Kasutajaliidese disain (HKI5088.HK)</option>
+                <option>Arvutivõrgud ja andmeside (HKI5070.HK)</option>
+                <option>Erialane inglise keel (HKI5082.HK)</option>
+                <option>ELU - Erialasid Lõimiv Uuendus (YID6001.YM)</option>
+                <option>Puudub</option>
+            </select>
+        </div>
+        
+        <div class="row ml-0 mr-0">
+            <div class="col p-1">
+                <a class="btn btn-block btn-danger" href="/" role="button">
+                    <span class="fas fa-times"></span>
+                </a>
+                <!-- <button type="button" class="btn btn-block btn-outline-info">kalender</button> -->
+            </div>
+            <div class="col-8 p-1">
+                
+                <button type="submit" class="btn btn-block btn-success">
+                    <span class="fas fa-check"></span>
+                </button>
+                <!-- <button type="button" class="btn btn-block btn-info">üldvaade</button> -->
+            </div>
+        </div>
+    </form>
+
+    <!-- ####################################################################### -->
+
+    <% include menu.ejs %>
+    <% include search.ejs %>
+
+    
+
+</body>
+
+</html>

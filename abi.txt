@@ -1,0 +1,58 @@
+aine
+tyyp
+pealkiri
+kirjeldus
+tahtaeg
+prioriteet
+meeldetuletus
+slug
+tehtud
+loodud
+
+
+
+<%= post.aine %>
+<%= post.tyyp %>
+<%= post.pealkiri %>
+<%= post.kirjeldus %>
+<%= post.tahtaeg %>
+<%= post.prioriteet %>
+<%= post.meeldetuletus %>
+<%= post.slug %>
+
+
+                        <span class="text-danger"><% if (post.prioriteet ==1) { %> 1-Madal <% } 
+                                                        else if (post.prioriteet ==2) { %> 2-Natuke Madal <% } 
+                                                        else if (post.prioriteet ==3) { %> 3-Keskimine <% } 
+                                                        else if (post.prioriteet ==4) { %> 4-Natuke Keskmine <% } 
+                                                        else (post.prioriteet ==5) { %> 5-Kõrge <% } %></span>
+
+
+
+
+
+
+
+<% if (post.prioriteet ==1) { %> checked <% } %>
+
+
+
+
+
+$(document).ready(function(){
+    $('.delete-post').on('click', function(p){
+        $target = $(p.target);
+        const id = $target.attr('data-id');
+        $.ajax({
+            type:'DELETE',
+            url: '/delete/'+id,
+            success: function(response){
+                alert('Kustutan projekti');
+                window.location.href='/deleted';
+            },
+            error: function(err){
+                console.log(err);
+            }
+        });
+    });
+});

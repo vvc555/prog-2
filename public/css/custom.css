@@ -1,0 +1,109 @@
+/*******************************
+* MODAL AS LEFT/RIGHT SIDEBAR
+* Add "left" or "right" in modal parent div, after class="modal".
+* Get free snippets on bootpen.com
+*******************************/
+.modal.left .modal-dialog,
+.modal.right .modal-dialog {
+    /*position: fixed;*/
+    margin: auto;
+    top: 75px;
+    width: 80%;
+    /*height: 100%;*/
+    -webkit-transform: translate3d(0%, 0, 0);
+        -ms-transform: translate3d(0%, 0, 0);
+         -o-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0);
+}
+
+.modal.left .modal-content,
+.modal.right .modal-content {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.modal.left .modal-body,
+.modal.right .modal-body {
+    padding: 15px 15px 80px;
+}
+
+/*Left*/
+.modal.left.fade .modal-dialog{
+    left: -10%;
+    -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+       -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+         -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+            transition: opacity 0.3s linear, left 0.3s ease-out;
+}
+
+.modal.left.fade.in .modal-dialog{
+    left: 0;
+}
+    
+/*Right*/
+.modal.right.fade .modal-dialog {
+    right: -10%;
+    -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+       -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+         -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+            transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+
+.modal.right.fade.in .modal-dialog {
+    right: 0;
+}
+
+/* ----- MODAL STYLE ----- */
+.modal-content {
+    border-radius: 0;
+    border: none;
+}
+
+.modal-header {
+    border-bottom-color: #EEEEEE;
+    background-color: #FAFAFA;
+}
+
+.btn-outline-info {
+    background: #ffffff;
+}
+
+.pro-group {
+    padding-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid #17a2b8;
+    width: 94%;
+}
+.pro-group:last-child {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    border-bottom: 0px;
+    padding-bottom: 30px;
+}
+.pro-group p {
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.gradient {
+    background: -webkit-linear-gradient(rgb(0, 0, 0), rgb(255, 255, 255));
+    -webkit-background-clip: text;
+    -ms-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-add {
+    color: black;
+    background-color: #c7de18;
+    margin-top: 1px;
+}
+.btn-add:hover {
+    color: black;
+    background-color: #aec218;
+    margin-top: 1px;
+}
