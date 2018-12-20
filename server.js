@@ -10,11 +10,14 @@ const slugify = require('slugify');
 
 
 
+
 const socketRoutes = require('./controller/socket');
 
 mongoose.connect('mongodb://localhost/planeerija', { useNewUrlParser: true });
 
 const Post = require('./models/post');
+
+app.use(logger('dev'));
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
