@@ -104,6 +104,7 @@ app.post('/inserted', (req, res) => {
             return res.send('error');
         }
         console.log(savedPost);
+
         res.render('inserted');
     });
 });
@@ -197,19 +198,19 @@ app.get('/checked', (req, res) => {
 io.on('connection', (socket) => {
     let id = socket.id;
 
-        console.log("user connected", id);
+    console.log("user connected", id);
     // console.log(id);
 
     // harjutus
-    socket.on('name', (name) => {
-        console.log(name);
-        socket.name = name;
-        socket.broadcast.emit('join', socket.name + " liitus vestlusega");
-    });
+    //socket.on('name', (name) => {
+    //    console.log(name);
+    //    socket.name = name;
+    //    socket.broadcast.emit('join', socket.name + " liitus vestlusega");
+    // });
     
-    socket.on('chat', (msg) => {
+    socket.on('post', (msg) => {
         // saadame kõikidele klientidele tagasi
-        io.emit('chat', {name: socket.name, text: msg});
+        io.emit('post', {name: socket.name, text: msg});
     });
     
     socket.on('disconnect', () => {

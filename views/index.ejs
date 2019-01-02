@@ -23,10 +23,34 @@
     <% include menu.ejs %>
     <% include search.ejs %>
 
+    <script>
+        var socket = io();
+        
+        // elemendid muutujatesse
+        var aine = document.getElementById("aine");
+        var tyyp = document.getElementById("tyyp");
+        var pealkiri = document.getElementById("pealkiri");
+        var kirjeldus = document.getElementById("kirjeldus");
+        var tahtaeg = document.getElementById("tahtaeg");
+        var prioriteet = document.getElementById("prioriteet");
+        var meeldetuletus = document.getElementById("meeldetuletus");
+        var sendBtn = document.getElementById("sendBtn");
+    
+    
+        // selle funktsiooni abil võtma serveri poolt vastu teateid nimega 'post'
+        socket.on('post', function(msg) {
+            console.log('reloadin');
+            // ning lisame saadud teate kõikide teiste teadete hulka
+            $('head').append('<META HTTP-EQUIV="REFRESH" CONTENT="2; URL=/">');
+            // postid.innerHTML += '<li>' + msg + '</li>';
+        });
+    </script>
+
+    <div id="postid">
     <% postid.forEach((post, index) => { %>
         <% include post-modal.ejs %>
     <% }) %>
-
+    </div>
 
 </body>
 
