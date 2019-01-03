@@ -56,3 +56,33 @@ $(document).ready(function(){
         });
     });
 });
+
+
+
+
+
+ <script>
+        var socket = io();
+        
+        // elemendid muutujatesse
+        var aine = document.getElementById("aine");
+        var tyyp = document.getElementById("tyyp");
+        var pealkiri = document.getElementById("pealkiri");
+        var kirjeldus = document.getElementById("kirjeldus");
+        var tahtaeg = document.getElementById("tahtaeg");
+        var prioriteet = document.getElementById("prioriteet");
+        var meeldetuletus = document.getElementById("meeldetuletus");
+        var sendBtn = document.getElementById("sendBtn");
+    
+        
+        // nupu funktsioon
+        sendBtn.addEventListener("click", function(e) {
+            console.log('klickisin');
+            // saadab teate nimega "post" serverisse, selle peame serveri pool vastu võtma, et kõikidele klientidele edastada
+        socket.emit('post', pealkiri);
+            // tekstivälja sisu tühjaks
+        pealkiri = "";
+        });
+    
+
+    </script>

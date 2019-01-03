@@ -28,19 +28,36 @@
                     <b>Kirjeldus: </b><%= post.kirjeldus %></p>
             </div>
             <div class="modal-footer">
-                <a class="btn btn-outline-danger delete-post" href="#" data-id="<%= post._id %>" role="button">Kustuta
+                <button class="btn btn-outline-danger delete-post" id="sendBtn1" name="sendBtn1" href="#" data-id="<%= post._id %>" role="button">Kustuta
                     <span class="fas fa-trash-alt"></span>
-                </a>
+                </button>
                 <a class="btn btn-outline-warning" href="/edit/<%= post._id %>" role="button">Muuda
                     <span class="fas fa-pen"></span>
                 </a>
                 <% if (post.tehtud ==false) { %>
-                    <a class="btn btn-success check-post" href="#" data-id="<%= post._id %>" role="button">Tehtud<% }
+                    <button class="btn btn-success check-post" id="sendBtn2" name="sendBtn2" href="#" data-id="<%= post._id %>" role="button">Tehtud<% }
                         else { %>
-                            <a class="btn btn-success check-post" href="#" data-id="<%= post._id %>" role="button">Tegemata<% } %>
+                            <button class="btn btn-success check-post" id="sendBtn2" name="sendBtn2" href="#" data-id="<%= post._id %>" role="button">Tegemata<% } %>
                     <span class="fas fa-check"></span>
-                </a>
+                    </button>
             </div>
         </div>
     </div>
+    <script>
+    
+        var socket = io();
+        var pealkiri = document.getElementById("pealkiri");
+        var sendBtn1 = document.getElementById("sendBtn1");
+        var sendBtn2 = document.getElementById("sendBtn2");
+        
+        // klicki peale saadan pealkirja serverisse
+        sendBtn1.addEventListener("click", function(e) {
+            socket.emit('post', pealkiri);
+            pealkiri = "";
+        });
+        sendBtn2.addEventListener("click", function(e) {
+            socket.emit('post', pealkiri);
+            pealkiri = "";
+        });
+</script>
 </div>

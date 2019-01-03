@@ -86,13 +86,22 @@
                 <!-- <button type="button" class="btn btn-block btn-outline-info">kalender</button> -->
             </div>
             <div class="col-8 p-1">
-                <button type="submit" class="btn btn-block btn-success">
+                <button type="submit" id="sendBtn" name="sendBtn" class="btn btn-block btn-success">
                     <span class="fas fa-check"></span>
                 </button>
                 <!-- <button type="button" class="btn btn-block btn-info">üldvaade</button> -->
             </div>
         </div>
     </form>
+    <script>
+        var socket = io();
+        var pealkiri = document.getElementById("pealkiri");
+        var sendBtn = document.getElementById("sendBtn");
+        sendBtn.addEventListener("click", function(e) {
+        socket.emit('post', pealkiri);
+        pealkiri = "";
+        });
+    </script>
 
     <!-- ####################################################################### -->
 
