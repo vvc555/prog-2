@@ -3,7 +3,6 @@
 
 <body>
     <a class="btn btn-add btn-lg px-3 btn-block" role="button" href="add">+ Lisa projekt / sündmus</a>
-
     <div class="btn-group-vertical btn-block" role="group" aria-label="Projektid / sündmused">
         <% postid.forEach((post, index) => { %>
         <div class="pro-group" data-toggle="modal" href="#<%=post.id%>">
@@ -17,41 +16,23 @@
         <% }) %>
     </div>
 
-
     <% include bottom.ejs %>
-
     <% include menu.ejs %>
     <% include search.ejs %>
 
     <script>
-    
     var socket = io();
-    //var pealkiri = document.getElementById("pealkiri");
-    //var sendBtn = document.getElementById("sendBtn");
-    
-    // klicki peale saadan pealkirja serverisse
-    //sendBtn.addEventListener("click", function(e) {
-    //    socket.emit('post', pealkiri);
-    //    pealkiri = "";
-    //});
-
-    
     // kuulan serverist posti ja kirjutan htmli refreshi
     socket.on('post', function(msg) {
         $('head').append('<META HTTP-EQUIV="REFRESH" CONTENT="2; URL=/">');
-        // postid.innerHTML += '<li>' + msg + '</li>';
     });
-        
-    
     </script>
 
     <div id="postid">
     <% postid.forEach((post, index) => { %>
         <% include post-modal.ejs %>
     <% }) %>
-
     </div>
 
 </body>
-
 </html>

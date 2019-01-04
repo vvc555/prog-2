@@ -28,36 +28,35 @@
                     <b>Kirjeldus: </b><%= post.kirjeldus %></p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-outline-danger delete-post" id="sendBtn1" name="sendBtn1" href="#" data-id="<%= post._id %>" role="button">Kustuta
+                <button class="btn btn-outline-danger delete-post" id="sendBtn1<%=post.id%>" name="sendBtn1<%=post.id%>" href="#" data-id="<%= post._id %>" role="button">Kustuta
                     <span class="fas fa-trash-alt"></span>
                 </button>
                 <a class="btn btn-outline-warning" href="/edit/<%= post._id %>" role="button">Muuda
                     <span class="fas fa-pen"></span>
                 </a>
                 <% if (post.tehtud ==false) { %>
-                    <button class="btn btn-success check-post" id="sendBtn2" name="sendBtn2" href="#" data-id="<%= post._id %>" role="button">Tehtud<% }
+                    <button class="btn btn-success check-post" id="sendBtn2<%=post.id%>" name="sendBtn2<%=post.id%>" href="#" data-id="<%= post._id %>" role="button">Tehtud<% }
                         else { %>
-                            <button class="btn btn-success check-post" id="sendBtn2" name="sendBtn2" href="#" data-id="<%= post._id %>" role="button">Tegemata<% } %>
+                            <button class="btn btn-success check-post" id="sendBtn2<%=post.id%>" name="sendBtn2<%=post.id%>" href="#" data-id="<%= post._id %>" role="button">Tegemata<% } %>
                     <span class="fas fa-check"></span>
                     </button>
             </div>
         </div>
     </div>
     <script>
-    
         var socket = io();
         var pealkiri = document.getElementById("pealkiri");
-        var sendBtn1 = document.getElementById("sendBtn1");
-        var sendBtn2 = document.getElementById("sendBtn2");
+        var sendBtn1<%=post.id%> = document.getElementById("sendBtn1<%=post.id%>");
+        var sendBtn2<%=post.id%> = document.getElementById("sendBtn2<%=post.id%>");
         
         // klicki peale saadan pealkirja serverisse
-        sendBtn1.addEventListener("click", function(e) {
+        sendBtn1<%=post.id%>.addEventListener("click", function(e) {
             socket.emit('post', pealkiri);
             pealkiri = "";
         });
-        sendBtn2.addEventListener("click", function(e) {
+        sendBtn2<%=post.id%>.addEventListener("click", function(e) {
             socket.emit('post', pealkiri);
             pealkiri = "";
         });
-</script>
+    </script>
 </div>
